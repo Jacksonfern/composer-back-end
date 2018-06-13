@@ -1,5 +1,5 @@
-module.exports.questionario = function(app){
-    app.get('/', function(req, res){
-        res.send("ACHOU!!!");
+module.exports = function(app){
+    app.get('/questionario', function(req, res){
+        console.log("Ready to get ID!!");
     });
 }
