@@ -7,8 +7,11 @@ app.set('view engine', 'ejs');
 app.set('views', './app/views');
 
 app.use(express.urlencoded({extended : true}));
-/*consign()
-    .include()
-    .into(app);*/
+consign()
+    .include("./app/routes")
+    .then("./config/connection.js")
+    .then("./app/models")
+    .then("./app/controllers")
+    .into(app);
     
 module.exports = app;

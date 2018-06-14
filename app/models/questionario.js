@@ -3,7 +3,7 @@ function questionario(connection){
 }
 
 questionario.prototype.questions = function(id_questionario, callback){
-    this._connection.query("SELECT OA_questoes_id_questao FROM OA_questionario_id_questionario "
+    this._connection.query("SELECT OA_questoes_id_questao as id FROM oa_questionario_has_oa_questoes "
     + "WHERE OA_questionario_id_questionario = '"+id_questionario+"'", callback);
 }
 
@@ -13,10 +13,10 @@ questionario.prototype.addVersao = function(params, callback){
 }
 
 questionario.prototype.getLastID = function(callback){
-    this._connection.query("SELECT MAX(id_versao_questionario) "
+    this._connection.query("SELECT MAX(id_versao_questionario) AS id "
     + "FROM versao_questionario", callback);
 }
 
-exports = function(){
+module.exports = function(){
     return questionario;
 }
