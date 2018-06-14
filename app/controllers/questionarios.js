@@ -1,3 +1,10 @@
+/*------------LISTA DO QUE FALTA-------------------
+    *criar questões e vincular a um questionário
+    *pegar id_questionário CORRETAMENTE (como que se faz isso),
+    *utilizar a notacao JSON corretamente,
+    *falta definir a variável N
+--------------------------------------------------*/
+
 exports.gerarVersoes = function(params, app){
     var id_questionario = params.id;
     var conn = app.config.connection();
@@ -26,10 +33,11 @@ exports.gerarVersoes = function(params, app){
                 var aux = id_questoes.slice();
                 var index = 0;
                 
-                while(aux.length > 0){
+                while(aux.length > 1){
                     index = (index + i) % aux.length;
-                    ordem += aux.splice(index, 1)[0];
+                    ordem += aux.splice(index, 1)[0] + ",";
                 }
+                ordem += aux[0];
 
                 let versaoQuestionario = {
                     id_versao_questionario : id_versao,
@@ -48,7 +56,7 @@ exports.gerarVersoes = function(params, app){
     });
 }
 
-function gerarVersoes(vet, N){
+/*function gerarVersoes(vet, N){
 	var versoes = [vet];
 	for(var i = 2; i <= N; i++){
 		var list = [];
@@ -63,4 +71,4 @@ function gerarVersoes(vet, N){
 		versoes.push(list);
 	}
 	return versoes;
-}
+}*/
