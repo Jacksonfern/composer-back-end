@@ -9,7 +9,7 @@ exports.gerarVersoes = function (params, app) {
             console.log("Erro ao se conectar com o banco de dados!" + err.msg);
             return;
         }
-
+        
         var id_questoes = []; //Lista que vai armazenar todos os ids das questões
         for (var i = 0; i < result.length; i++) {
             id_questoes.push(result[i].id); //Adicionando

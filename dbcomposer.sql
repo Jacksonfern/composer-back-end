@@ -3,24 +3,12 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Tempo de geração: 14/06/2018 às 19:41
--- Versão do servidor: 5.7.22-0ubuntu0.17.10.1
--- Versão do PHP: 7.1.17-0ubuntu0.17.10.1
+-- Generation Time: Jun 23, 2018 at 12:54 PM
+-- Server version: 5.7.22-0ubuntu0.17.10.1
+-- PHP Version: 7.1.17-0ubuntu0.17.10.1
 
 CREATE DATABASE dbcomposer;
 USE dbcomposer;
-
-/*USE dbcomposer;
-
-create table versao_simulado(
-	id_versao_simulado int not null PRIMARY KEY,
-    versao_questionario_id_versao_questionario int not null,
-    simulado_id_simulado int not null,
-    
-    FOREIGN KEY(versao_questionario_id_versao_questionario) REFERENCES versao_questionario(id_versao_questionario),
-    FOREIGN KEY(simulado_id_simulado) REFERENCES simulado(id_simulado)
-);*/
-
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -32,13 +20,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Banco de dados: `dbcomposer`
+-- Database: `dbcomposer`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `aluno`
+-- Table structure for table `aluno`
 --
 
 CREATE TABLE `aluno` (
@@ -51,7 +39,7 @@ CREATE TABLE `aluno` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `aluno_has_versao_questionario`
+-- Table structure for table `aluno_has_versao_questionario`
 --
 
 CREATE TABLE `aluno_has_versao_questionario` (
@@ -62,7 +50,7 @@ CREATE TABLE `aluno_has_versao_questionario` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `aluno_turma`
+-- Table structure for table `aluno_turma`
 --
 
 CREATE TABLE `aluno_turma` (
@@ -73,7 +61,7 @@ CREATE TABLE `aluno_turma` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `area`
+-- Table structure for table `area`
 --
 
 CREATE TABLE `area` (
@@ -82,7 +70,7 @@ CREATE TABLE `area` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `area`
+-- Dumping data for table `area`
 --
 
 INSERT INTO `area` (`id_area`, `nome_area`) VALUES
@@ -91,7 +79,7 @@ INSERT INTO `area` (`id_area`, `nome_area`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `aula`
+-- Table structure for table `aula`
 --
 
 CREATE TABLE `aula` (
@@ -101,7 +89,7 @@ CREATE TABLE `aula` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `aula`
+-- Dumping data for table `aula`
 --
 
 INSERT INTO `aula` (`id_aula`, `descricao_aula`, `id_disciplina`) VALUES
@@ -114,7 +102,7 @@ INSERT INTO `aula` (`id_aula`, `descricao_aula`, `id_disciplina`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `aula_has_oa_questionario`
+-- Table structure for table `aula_has_oa_questionario`
 --
 
 CREATE TABLE `aula_has_oa_questionario` (
@@ -123,7 +111,7 @@ CREATE TABLE `aula_has_oa_questionario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `aula_has_oa_questionario`
+-- Dumping data for table `aula_has_oa_questionario`
 --
 
 INSERT INTO `aula_has_oa_questionario` (`aula_id_aula`, `OA_questionario_id_questionario`) VALUES
@@ -135,7 +123,7 @@ INSERT INTO `aula_has_oa_questionario` (`aula_id_aula`, `OA_questionario_id_ques
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `aula_has_objetos_aprendizagem`
+-- Table structure for table `aula_has_objetos_aprendizagem`
 --
 
 CREATE TABLE `aula_has_objetos_aprendizagem` (
@@ -146,7 +134,7 @@ CREATE TABLE `aula_has_objetos_aprendizagem` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `aula_has_topico`
+-- Table structure for table `aula_has_topico`
 --
 
 CREATE TABLE `aula_has_topico` (
@@ -157,7 +145,7 @@ CREATE TABLE `aula_has_topico` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `aula_has_turma`
+-- Table structure for table `aula_has_turma`
 --
 
 CREATE TABLE `aula_has_turma` (
@@ -166,7 +154,7 @@ CREATE TABLE `aula_has_turma` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `aula_has_turma`
+-- Dumping data for table `aula_has_turma`
 --
 
 INSERT INTO `aula_has_turma` (`aula_id_aula`, `turma_id_turma`) VALUES
@@ -178,7 +166,7 @@ INSERT INTO `aula_has_turma` (`aula_id_aula`, `turma_id_turma`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `bairro`
+-- Table structure for table `bairro`
 --
 
 CREATE TABLE `bairro` (
@@ -188,7 +176,7 @@ CREATE TABLE `bairro` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `bairro`
+-- Dumping data for table `bairro`
 --
 
 INSERT INTO `bairro` (`id_bairro`, `nome_bairro`, `id_cidade`) VALUES
@@ -197,7 +185,7 @@ INSERT INTO `bairro` (`id_bairro`, `nome_bairro`, `id_cidade`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `cidade`
+-- Table structure for table `cidade`
 --
 
 CREATE TABLE `cidade` (
@@ -208,7 +196,7 @@ CREATE TABLE `cidade` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `cidade`
+-- Dumping data for table `cidade`
 --
 
 INSERT INTO `cidade` (`id_cidade`, `nome_cidade`, `nome_estado`, `id_UF`) VALUES
@@ -217,7 +205,7 @@ INSERT INTO `cidade` (`id_cidade`, `nome_cidade`, `nome_estado`, `id_UF`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `competencias`
+-- Table structure for table `competencias`
 --
 
 CREATE TABLE `competencias` (
@@ -229,7 +217,7 @@ CREATE TABLE `competencias` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `coordenador`
+-- Table structure for table `coordenador`
 --
 
 CREATE TABLE `coordenador` (
@@ -238,7 +226,7 @@ CREATE TABLE `coordenador` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `coordenador`
+-- Dumping data for table `coordenador`
 --
 
 INSERT INTO `coordenador` (`id_coordenador`, `curso_id_curso`) VALUES
@@ -247,7 +235,7 @@ INSERT INTO `coordenador` (`id_coordenador`, `curso_id_curso`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `curso`
+-- Table structure for table `curso`
 --
 
 CREATE TABLE `curso` (
@@ -257,7 +245,7 @@ CREATE TABLE `curso` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `curso`
+-- Dumping data for table `curso`
 --
 
 INSERT INTO `curso` (`id_curso`, `nome_curso`, `status_curso_id_status`) VALUES
@@ -267,7 +255,7 @@ INSERT INTO `curso` (`id_curso`, `nome_curso`, `status_curso_id_status`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `dados_pessoais`
+-- Table structure for table `dados_pessoais`
 --
 
 CREATE TABLE `dados_pessoais` (
@@ -282,7 +270,7 @@ CREATE TABLE `dados_pessoais` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `dados_pessoais`
+-- Dumping data for table `dados_pessoais`
 --
 
 INSERT INTO `dados_pessoais` (`id_dados_pessoais`, `CPF`, `RG`, `data_nascimento`, `idade`, `sexo`, `telefone`, `rua_idendereco`) VALUES
@@ -291,7 +279,7 @@ INSERT INTO `dados_pessoais` (`id_dados_pessoais`, `CPF`, `RG`, `data_nascimento
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `disciplina`
+-- Table structure for table `disciplina`
 --
 
 CREATE TABLE `disciplina` (
@@ -301,7 +289,7 @@ CREATE TABLE `disciplina` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `disciplina`
+-- Dumping data for table `disciplina`
 --
 
 INSERT INTO `disciplina` (`id_disciplina`, `nome_disciplina`, `id_area`) VALUES
@@ -311,7 +299,7 @@ INSERT INTO `disciplina` (`id_disciplina`, `nome_disciplina`, `id_area`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `eixocognitivo`
+-- Table structure for table `eixocognitivo`
 --
 
 CREATE TABLE `eixocognitivo` (
@@ -323,7 +311,7 @@ CREATE TABLE `eixocognitivo` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `epoca_bimestre`
+-- Table structure for table `epoca_bimestre`
 --
 
 CREATE TABLE `epoca_bimestre` (
@@ -334,7 +322,7 @@ CREATE TABLE `epoca_bimestre` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `epoca_semestre`
+-- Table structure for table `epoca_semestre`
 --
 
 CREATE TABLE `epoca_semestre` (
@@ -345,7 +333,7 @@ CREATE TABLE `epoca_semestre` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `habilidades`
+-- Table structure for table `habilidades`
 --
 
 CREATE TABLE `habilidades` (
@@ -357,7 +345,7 @@ CREATE TABLE `habilidades` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `keywords`
+-- Table structure for table `keywords`
 --
 
 CREATE TABLE `keywords` (
@@ -367,7 +355,7 @@ CREATE TABLE `keywords` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `oa_questionario`
+-- Table structure for table `oa_questionario`
 --
 
 CREATE TABLE `oa_questionario` (
@@ -378,7 +366,7 @@ CREATE TABLE `oa_questionario` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `oa_questionario`
+-- Dumping data for table `oa_questionario`
 --
 
 INSERT INTO `oa_questionario` (`id_questionario`, `flag_avaliacao`, `disciplina_id_disciplina`, `descricao_OA`) VALUES
@@ -389,7 +377,7 @@ INSERT INTO `oa_questionario` (`id_questionario`, `flag_avaliacao`, `disciplina_
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `oa_questionario_has_oa_questoes`
+-- Table structure for table `oa_questionario_has_oa_questoes`
 --
 
 CREATE TABLE `oa_questionario_has_oa_questoes` (
@@ -398,20 +386,25 @@ CREATE TABLE `oa_questionario_has_oa_questoes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `oa_questionario_has_oa_questoes`
+-- Dumping data for table `oa_questionario_has_oa_questoes`
 --
 
 INSERT INTO `oa_questionario_has_oa_questoes` (`OA_questionario_id_questionario`, `OA_questoes_id_questao`) VALUES
 (1, 1),
+(3, 1),
 (1, 2),
+(3, 2),
 (1, 3),
+(3, 3),
 (1, 4),
-(1, 5);
+(3, 4),
+(1, 5),
+(3, 5);
 
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `oa_questoes`
+-- Table structure for table `oa_questoes`
 --
 
 CREATE TABLE `oa_questoes` (
@@ -430,7 +423,7 @@ CREATE TABLE `oa_questoes` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `oa_questoes`
+-- Dumping data for table `oa_questoes`
 --
 
 INSERT INTO `oa_questoes` (`id_questao`, `descricao_OA`, `disciplina_id_disciplina`, `professor_id_professor`, `enunciado`, `desvio_opcaoA`, `desvio_opcaoB`, `desvio_opcaoC`, `desvio_opcaoD`, `desvio_opcaoE`, `NDQ`, `tempo_esperado`) VALUES
@@ -443,7 +436,7 @@ INSERT INTO `oa_questoes` (`id_questao`, `descricao_OA`, `disciplina_id_discipli
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `oa_questoes_has_habilidades`
+-- Table structure for table `oa_questoes_has_habilidades`
 --
 
 CREATE TABLE `oa_questoes_has_habilidades` (
@@ -454,7 +447,7 @@ CREATE TABLE `oa_questoes_has_habilidades` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `oa_questoes_has_topico`
+-- Table structure for table `oa_questoes_has_topico`
 --
 
 CREATE TABLE `oa_questoes_has_topico` (
@@ -465,7 +458,7 @@ CREATE TABLE `oa_questoes_has_topico` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `objetos_aprendizagem`
+-- Table structure for table `objetos_aprendizagem`
 --
 
 CREATE TABLE `objetos_aprendizagem` (
@@ -479,7 +472,7 @@ CREATE TABLE `objetos_aprendizagem` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `objetos_aprendizagem_has_habilidades`
+-- Table structure for table `objetos_aprendizagem_has_habilidades`
 --
 
 CREATE TABLE `objetos_aprendizagem_has_habilidades` (
@@ -490,7 +483,7 @@ CREATE TABLE `objetos_aprendizagem_has_habilidades` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `objetos_aprendizagem_has_keywords`
+-- Table structure for table `objetos_aprendizagem_has_keywords`
 --
 
 CREATE TABLE `objetos_aprendizagem_has_keywords` (
@@ -501,7 +494,7 @@ CREATE TABLE `objetos_aprendizagem_has_keywords` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `objetos_aprendizagem_has_topico`
+-- Table structure for table `objetos_aprendizagem_has_topico`
 --
 
 CREATE TABLE `objetos_aprendizagem_has_topico` (
@@ -512,7 +505,7 @@ CREATE TABLE `objetos_aprendizagem_has_topico` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `professor`
+-- Table structure for table `professor`
 --
 
 CREATE TABLE `professor` (
@@ -524,7 +517,7 @@ CREATE TABLE `professor` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `professor`
+-- Dumping data for table `professor`
 --
 
 INSERT INTO `professor` (`id_professor`, `nome`, `data_admissao`, `salario_base`, `id_dados_pessoais`) VALUES
@@ -533,7 +526,7 @@ INSERT INTO `professor` (`id_professor`, `nome`, `data_admissao`, `salario_base`
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `professor_has_disciplina`
+-- Table structure for table `professor_has_disciplina`
 --
 
 CREATE TABLE `professor_has_disciplina` (
@@ -544,7 +537,7 @@ CREATE TABLE `professor_has_disciplina` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `professor_has_turma`
+-- Table structure for table `professor_has_turma`
 --
 
 CREATE TABLE `professor_has_turma` (
@@ -555,7 +548,7 @@ CREATE TABLE `professor_has_turma` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `rua`
+-- Table structure for table `rua`
 --
 
 CREATE TABLE `rua` (
@@ -568,7 +561,7 @@ CREATE TABLE `rua` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `rua`
+-- Dumping data for table `rua`
 --
 
 INSERT INTO `rua` (`idendereco`, `nome_rua`, `numero_casa`, `CEP`, `complemento`, `id_bairro`) VALUES
@@ -577,7 +570,7 @@ INSERT INTO `rua` (`idendereco`, `nome_rua`, `numero_casa`, `CEP`, `complemento`
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `simulado`
+-- Table structure for table `simulado`
 --
 
 CREATE TABLE `simulado` (
@@ -586,10 +579,17 @@ CREATE TABLE `simulado` (
   `id_coordenador` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `simulado`
+--
+
+INSERT INTO `simulado` (`id_simulado`, `descricao_simulado`, `id_coordenador`) VALUES
+(1, 'Programação web', 1);
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `simulado_has_oa_questionario`
+-- Table structure for table `simulado_has_oa_questionario`
 --
 
 CREATE TABLE `simulado_has_oa_questionario` (
@@ -597,10 +597,18 @@ CREATE TABLE `simulado_has_oa_questionario` (
   `OA_questionario_id_questionario` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `simulado_has_oa_questionario`
+--
+
+INSERT INTO `simulado_has_oa_questionario` (`simulado_id_simulado`, `OA_questionario_id_questionario`) VALUES
+(1, 1),
+(1, 3);
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `status_curso`
+-- Table structure for table `status_curso`
 --
 
 CREATE TABLE `status_curso` (
@@ -609,7 +617,7 @@ CREATE TABLE `status_curso` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `status_curso`
+-- Dumping data for table `status_curso`
 --
 
 INSERT INTO `status_curso` (`id_status`, `status_cursocol`) VALUES
@@ -618,7 +626,7 @@ INSERT INTO `status_curso` (`id_status`, `status_cursocol`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `topico`
+-- Table structure for table `topico`
 --
 
 CREATE TABLE `topico` (
@@ -628,7 +636,7 @@ CREATE TABLE `topico` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `topico`
+-- Dumping data for table `topico`
 --
 
 INSERT INTO `topico` (`id_topico`, `nome_topico`, `NDT`) VALUES
@@ -640,7 +648,7 @@ INSERT INTO `topico` (`id_topico`, `nome_topico`, `NDT`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `turma`
+-- Table structure for table `turma`
 --
 
 CREATE TABLE `turma` (
@@ -650,7 +658,7 @@ CREATE TABLE `turma` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `turma`
+-- Dumping data for table `turma`
 --
 
 INSERT INTO `turma` (`id_turma`, `turno`, `id_curso`) VALUES
@@ -660,7 +668,7 @@ INSERT INTO `turma` (`id_turma`, `turno`, `id_curso`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `turma_has_disciplina`
+-- Table structure for table `turma_has_disciplina`
 --
 
 CREATE TABLE `turma_has_disciplina` (
@@ -669,7 +677,7 @@ CREATE TABLE `turma_has_disciplina` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `turma_has_disciplina`
+-- Dumping data for table `turma_has_disciplina`
 --
 
 INSERT INTO `turma_has_disciplina` (`turma_id_turma`, `disciplina_id_disciplina`) VALUES
@@ -680,7 +688,7 @@ INSERT INTO `turma_has_disciplina` (`turma_id_turma`, `disciplina_id_disciplina`
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `turma_has_epoca_bimestre`
+-- Table structure for table `turma_has_epoca_bimestre`
 --
 
 CREATE TABLE `turma_has_epoca_bimestre` (
@@ -692,7 +700,7 @@ CREATE TABLE `turma_has_epoca_bimestre` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `turma_has_simulado`
+-- Table structure for table `turma_has_simulado`
 --
 
 CREATE TABLE `turma_has_simulado` (
@@ -703,7 +711,7 @@ CREATE TABLE `turma_has_simulado` (
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `uf`
+-- Table structure for table `uf`
 --
 
 CREATE TABLE `uf` (
@@ -712,7 +720,7 @@ CREATE TABLE `uf` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 --
--- Fazendo dump de dados para tabela `uf`
+-- Dumping data for table `uf`
 --
 
 INSERT INTO `uf` (`id_UF`, `nome_UF`) VALUES
@@ -721,7 +729,7 @@ INSERT INTO `uf` (`id_UF`, `nome_UF`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `versao_questionario`
+-- Table structure for table `versao_questionario`
 --
 
 CREATE TABLE `versao_questionario` (
@@ -730,10 +738,24 @@ CREATE TABLE `versao_questionario` (
   `ordem` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `versao_questionario`
+--
+
+INSERT INTO `versao_questionario` (`id_versao_questionario`, `OA_questionario_id_questionario`, `ordem`) VALUES
+(1, 1, '1,2,3,4,5'),
+(2, 1, '2,4,1,5,3'),
+(3, 1, '3,1,5,2,4'),
+(4, 1, '4,3,5,2,1'),
+(5, 3, '1,2,3,4,5'),
+(6, 3, '2,4,1,5,3'),
+(7, 3, '3,1,5,2,4'),
+(8, 3, '4,3,5,2,1');
+
 -- --------------------------------------------------------
 
 --
--- Estrutura para tabela `versao_questionario_has_oa_questoes`
+-- Table structure for table `versao_questionario_has_oa_questoes`
 --
 
 CREATE TABLE `versao_questionario_has_oa_questoes` (
@@ -741,19 +763,42 @@ CREATE TABLE `versao_questionario_has_oa_questoes` (
   `OA_questoes_id_questao` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+-- --------------------------------------------------------
+
 --
--- Índices de tabelas apagadas
+-- Table structure for table `versao_simulado`
+--
+
+CREATE TABLE `versao_simulado` (
+  `id_versao_simulado` int(11) NOT NULL,
+  `versao_simulado` int(11) NOT NULL,
+  `simulado_id_simulado` int(11) NOT NULL,
+  `versao_questionario_id_versao_questionario` int(10) UNSIGNED DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `versao_simulado`
+--
+
+INSERT INTO `versao_simulado` (`id_versao_simulado`, `simulado_id_simulado`, `versao_questionario_id_versao_questionario`) VALUES
+(1, 1, 1),
+(2, 1, 2),
+(3, 1, 3),
+(4, 1, 4);
+
+--
+-- Indexes for dumped tables
 --
 
 --
--- Índices de tabela `aluno`
+-- Indexes for table `aluno`
 --
 ALTER TABLE `aluno`
   ADD PRIMARY KEY (`id_aluno`),
   ADD KEY `fk_aluno_dados_pessoais1_idx` (`id_dados_pessoais`);
 
 --
--- Índices de tabela `aluno_has_versao_questionario`
+-- Indexes for table `aluno_has_versao_questionario`
 --
 ALTER TABLE `aluno_has_versao_questionario`
   ADD PRIMARY KEY (`aluno_id_aluno`,`versao_questionario_id_versao_questionario`),
@@ -761,7 +806,7 @@ ALTER TABLE `aluno_has_versao_questionario`
   ADD KEY `fk_aluno_has_versao_questionario_aluno1_idx` (`aluno_id_aluno`);
 
 --
--- Índices de tabela `aluno_turma`
+-- Indexes for table `aluno_turma`
 --
 ALTER TABLE `aluno_turma`
   ADD PRIMARY KEY (`aluno_id_aluno`,`turma_id_turma`),
@@ -769,20 +814,20 @@ ALTER TABLE `aluno_turma`
   ADD KEY `fk_aluno_has_turma_aluno1_idx` (`aluno_id_aluno`);
 
 --
--- Índices de tabela `area`
+-- Indexes for table `area`
 --
 ALTER TABLE `area`
   ADD PRIMARY KEY (`id_area`);
 
 --
--- Índices de tabela `aula`
+-- Indexes for table `aula`
 --
 ALTER TABLE `aula`
   ADD PRIMARY KEY (`id_aula`),
   ADD KEY `fk_aula_disciplina1_idx` (`id_disciplina`);
 
 --
--- Índices de tabela `aula_has_oa_questionario`
+-- Indexes for table `aula_has_oa_questionario`
 --
 ALTER TABLE `aula_has_oa_questionario`
   ADD PRIMARY KEY (`aula_id_aula`,`OA_questionario_id_questionario`),
@@ -790,7 +835,7 @@ ALTER TABLE `aula_has_oa_questionario`
   ADD KEY `fk_aula_has_OA_questionario_aula1_idx` (`aula_id_aula`);
 
 --
--- Índices de tabela `aula_has_objetos_aprendizagem`
+-- Indexes for table `aula_has_objetos_aprendizagem`
 --
 ALTER TABLE `aula_has_objetos_aprendizagem`
   ADD PRIMARY KEY (`aula_id_aula`,`Objetos_Aprendizagem_idObjetos_Aprendizagem`),
@@ -798,7 +843,7 @@ ALTER TABLE `aula_has_objetos_aprendizagem`
   ADD KEY `fk_aula_has_Objetos_Aprendizagem_aula1_idx` (`aula_id_aula`);
 
 --
--- Índices de tabela `aula_has_topico`
+-- Indexes for table `aula_has_topico`
 --
 ALTER TABLE `aula_has_topico`
   ADD PRIMARY KEY (`aula_id_aula`,`topico_id_topico`),
@@ -806,7 +851,7 @@ ALTER TABLE `aula_has_topico`
   ADD KEY `fk_aula_has_topico_aula1_idx` (`aula_id_aula`);
 
 --
--- Índices de tabela `aula_has_turma`
+-- Indexes for table `aula_has_turma`
 --
 ALTER TABLE `aula_has_turma`
   ADD PRIMARY KEY (`aula_id_aula`,`turma_id_turma`),
@@ -814,95 +859,95 @@ ALTER TABLE `aula_has_turma`
   ADD KEY `fk_aula_has_turma_aula1_idx` (`aula_id_aula`);
 
 --
--- Índices de tabela `bairro`
+-- Indexes for table `bairro`
 --
 ALTER TABLE `bairro`
   ADD PRIMARY KEY (`id_bairro`),
   ADD KEY `fk_bairro_cidade1_idx` (`id_cidade`);
 
 --
--- Índices de tabela `cidade`
+-- Indexes for table `cidade`
 --
 ALTER TABLE `cidade`
   ADD PRIMARY KEY (`id_cidade`),
   ADD KEY `fk_cidade_UF1_idx` (`id_UF`);
 
 --
--- Índices de tabela `competencias`
+-- Indexes for table `competencias`
 --
 ALTER TABLE `competencias`
   ADD PRIMARY KEY (`idcompetencias`),
   ADD KEY `fk_competencias_area1_idx` (`area_id_area`);
 
 --
--- Índices de tabela `coordenador`
+-- Indexes for table `coordenador`
 --
 ALTER TABLE `coordenador`
   ADD PRIMARY KEY (`id_coordenador`),
   ADD KEY `fk_coordenador_curso1_idx` (`curso_id_curso`);
 
 --
--- Índices de tabela `curso`
+-- Indexes for table `curso`
 --
 ALTER TABLE `curso`
   ADD PRIMARY KEY (`id_curso`),
   ADD KEY `fk_curso_status_curso1_idx` (`status_curso_id_status`);
 
 --
--- Índices de tabela `dados_pessoais`
+-- Indexes for table `dados_pessoais`
 --
 ALTER TABLE `dados_pessoais`
   ADD PRIMARY KEY (`id_dados_pessoais`),
   ADD KEY `fk_dados_pessoais_rua1_idx` (`rua_idendereco`);
 
 --
--- Índices de tabela `disciplina`
+-- Indexes for table `disciplina`
 --
 ALTER TABLE `disciplina`
   ADD PRIMARY KEY (`id_disciplina`),
   ADD KEY `fk_disciplina_area1_idx` (`id_area`);
 
 --
--- Índices de tabela `eixocognitivo`
+-- Indexes for table `eixocognitivo`
 --
 ALTER TABLE `eixocognitivo`
   ADD PRIMARY KEY (`ideixocognitivo`),
   ADD KEY `fk_eixocognitivo_area1_idx` (`area_id_area`);
 
 --
--- Índices de tabela `epoca_bimestre`
+-- Indexes for table `epoca_bimestre`
 --
 ALTER TABLE `epoca_bimestre`
   ADD PRIMARY KEY (`id_epoca_bimestre`);
 
 --
--- Índices de tabela `epoca_semestre`
+-- Indexes for table `epoca_semestre`
 --
 ALTER TABLE `epoca_semestre`
   ADD PRIMARY KEY (`id_epoca_semestre`);
 
 --
--- Índices de tabela `habilidades`
+-- Indexes for table `habilidades`
 --
 ALTER TABLE `habilidades`
   ADD PRIMARY KEY (`id_habilidades`),
   ADD KEY `fk_habilidades_area1_idx` (`id_area`);
 
 --
--- Índices de tabela `keywords`
+-- Indexes for table `keywords`
 --
 ALTER TABLE `keywords`
   ADD PRIMARY KEY (`idKeywords`);
 
 --
--- Índices de tabela `oa_questionario`
+-- Indexes for table `oa_questionario`
 --
 ALTER TABLE `oa_questionario`
   ADD PRIMARY KEY (`id_questionario`),
   ADD KEY `fk_OA_questionario_disciplina1_idx` (`disciplina_id_disciplina`);
 
 --
--- Índices de tabela `oa_questionario_has_oa_questoes`
+-- Indexes for table `oa_questionario_has_oa_questoes`
 --
 ALTER TABLE `oa_questionario_has_oa_questoes`
   ADD PRIMARY KEY (`OA_questionario_id_questionario`,`OA_questoes_id_questao`),
@@ -910,7 +955,7 @@ ALTER TABLE `oa_questionario_has_oa_questoes`
   ADD KEY `fk_OA_questionario_has_OA_questoes_OA_questionario1_idx` (`OA_questionario_id_questionario`);
 
 --
--- Índices de tabela `oa_questoes`
+-- Indexes for table `oa_questoes`
 --
 ALTER TABLE `oa_questoes`
   ADD PRIMARY KEY (`id_questao`),
@@ -918,7 +963,7 @@ ALTER TABLE `oa_questoes`
   ADD KEY `fk_OA_questoes_professor1_idx` (`professor_id_professor`);
 
 --
--- Índices de tabela `oa_questoes_has_habilidades`
+-- Indexes for table `oa_questoes_has_habilidades`
 --
 ALTER TABLE `oa_questoes_has_habilidades`
   ADD PRIMARY KEY (`OA_questoes_id_questao`,`habilidades_id_habilidades`),
@@ -926,7 +971,7 @@ ALTER TABLE `oa_questoes_has_habilidades`
   ADD KEY `fk_OA_questoes_has_habilidades_OA_questoes1_idx` (`OA_questoes_id_questao`);
 
 --
--- Índices de tabela `oa_questoes_has_topico`
+-- Indexes for table `oa_questoes_has_topico`
 --
 ALTER TABLE `oa_questoes_has_topico`
   ADD PRIMARY KEY (`OA_questoes_id_questao`,`topico_id_topico`),
@@ -934,7 +979,7 @@ ALTER TABLE `oa_questoes_has_topico`
   ADD KEY `fk_OA_questoes_has_topico_OA_questoes1_idx` (`OA_questoes_id_questao`);
 
 --
--- Índices de tabela `objetos_aprendizagem`
+-- Indexes for table `objetos_aprendizagem`
 --
 ALTER TABLE `objetos_aprendizagem`
   ADD PRIMARY KEY (`idObjetos_Aprendizagem`),
@@ -942,7 +987,7 @@ ALTER TABLE `objetos_aprendizagem`
   ADD KEY `fk_Objetos_Aprendizagem_professor1_idx` (`professor_id_professor`);
 
 --
--- Índices de tabela `objetos_aprendizagem_has_habilidades`
+-- Indexes for table `objetos_aprendizagem_has_habilidades`
 --
 ALTER TABLE `objetos_aprendizagem_has_habilidades`
   ADD PRIMARY KEY (`Objetos_Aprendizagem_idObjetos_Aprendizagem`,`habilidades_id_habilidades`),
@@ -950,7 +995,7 @@ ALTER TABLE `objetos_aprendizagem_has_habilidades`
   ADD KEY `fk_Objetos_Aprendizagem_has_habilidades_Objetos_Aprendizage_idx` (`Objetos_Aprendizagem_idObjetos_Aprendizagem`);
 
 --
--- Índices de tabela `objetos_aprendizagem_has_keywords`
+-- Indexes for table `objetos_aprendizagem_has_keywords`
 --
 ALTER TABLE `objetos_aprendizagem_has_keywords`
   ADD PRIMARY KEY (`Objetos_Aprendizagem_idObjetos_Aprendizagem`,`Keywords_idKeywords`),
@@ -958,7 +1003,7 @@ ALTER TABLE `objetos_aprendizagem_has_keywords`
   ADD KEY `fk_Objetos_Aprendizagem_has_Keywords_Objetos_Aprendizagem1_idx` (`Objetos_Aprendizagem_idObjetos_Aprendizagem`);
 
 --
--- Índices de tabela `objetos_aprendizagem_has_topico`
+-- Indexes for table `objetos_aprendizagem_has_topico`
 --
 ALTER TABLE `objetos_aprendizagem_has_topico`
   ADD PRIMARY KEY (`Objetos_Aprendizagem_idObjetos_Aprendizagem`,`topico_id_topico`),
@@ -966,14 +1011,14 @@ ALTER TABLE `objetos_aprendizagem_has_topico`
   ADD KEY `fk_Objetos_Aprendizagem_has_topico_Objetos_Aprendizagem1_idx` (`Objetos_Aprendizagem_idObjetos_Aprendizagem`);
 
 --
--- Índices de tabela `professor`
+-- Indexes for table `professor`
 --
 ALTER TABLE `professor`
   ADD PRIMARY KEY (`id_professor`),
   ADD KEY `fk_professor_dados_pessoais1_idx` (`id_dados_pessoais`);
 
 --
--- Índices de tabela `professor_has_disciplina`
+-- Indexes for table `professor_has_disciplina`
 --
 ALTER TABLE `professor_has_disciplina`
   ADD PRIMARY KEY (`professor_id_professor`,`disciplina_id_disciplina`),
@@ -981,7 +1026,7 @@ ALTER TABLE `professor_has_disciplina`
   ADD KEY `fk_professor_has_disciplina_professor1_idx` (`professor_id_professor`);
 
 --
--- Índices de tabela `professor_has_turma`
+-- Indexes for table `professor_has_turma`
 --
 ALTER TABLE `professor_has_turma`
   ADD PRIMARY KEY (`professor_id_professor`,`turma_id_turma`),
@@ -989,21 +1034,21 @@ ALTER TABLE `professor_has_turma`
   ADD KEY `fk_professor_has_turma_professor1_idx` (`professor_id_professor`);
 
 --
--- Índices de tabela `rua`
+-- Indexes for table `rua`
 --
 ALTER TABLE `rua`
   ADD PRIMARY KEY (`idendereco`),
   ADD KEY `fk_rua_bairro1_idx` (`id_bairro`);
 
 --
--- Índices de tabela `simulado`
+-- Indexes for table `simulado`
 --
 ALTER TABLE `simulado`
   ADD PRIMARY KEY (`id_simulado`),
   ADD KEY `fk_simulado_coordenador1_idx` (`id_coordenador`);
 
 --
--- Índices de tabela `simulado_has_oa_questionario`
+-- Indexes for table `simulado_has_oa_questionario`
 --
 ALTER TABLE `simulado_has_oa_questionario`
   ADD PRIMARY KEY (`simulado_id_simulado`,`OA_questionario_id_questionario`),
@@ -1011,26 +1056,26 @@ ALTER TABLE `simulado_has_oa_questionario`
   ADD KEY `fk_simulado_has_OA_questionario_simulado1_idx` (`simulado_id_simulado`);
 
 --
--- Índices de tabela `status_curso`
+-- Indexes for table `status_curso`
 --
 ALTER TABLE `status_curso`
   ADD PRIMARY KEY (`id_status`);
 
 --
--- Índices de tabela `topico`
+-- Indexes for table `topico`
 --
 ALTER TABLE `topico`
   ADD PRIMARY KEY (`id_topico`);
 
 --
--- Índices de tabela `turma`
+-- Indexes for table `turma`
 --
 ALTER TABLE `turma`
   ADD PRIMARY KEY (`id_turma`),
   ADD KEY `fk_turma_curso1_idx` (`id_curso`);
 
 --
--- Índices de tabela `turma_has_disciplina`
+-- Indexes for table `turma_has_disciplina`
 --
 ALTER TABLE `turma_has_disciplina`
   ADD PRIMARY KEY (`turma_id_turma`,`disciplina_id_disciplina`),
@@ -1038,7 +1083,7 @@ ALTER TABLE `turma_has_disciplina`
   ADD KEY `fk_turma_has_disciplina_turma1_idx` (`turma_id_turma`);
 
 --
--- Índices de tabela `turma_has_epoca_bimestre`
+-- Indexes for table `turma_has_epoca_bimestre`
 --
 ALTER TABLE `turma_has_epoca_bimestre`
   ADD PRIMARY KEY (`turma_id_turma`,`epoca_semestre_id_epoca_semestre`),
@@ -1047,7 +1092,7 @@ ALTER TABLE `turma_has_epoca_bimestre`
   ADD KEY `fk_turma_has_epoca_bimestre_epoca_semestre1_idx` (`epoca_semestre_id_epoca_semestre`);
 
 --
--- Índices de tabela `turma_has_simulado`
+-- Indexes for table `turma_has_simulado`
 --
 ALTER TABLE `turma_has_simulado`
   ADD PRIMARY KEY (`turma_id_turma`,`simulado_id_simulado`),
@@ -1055,20 +1100,20 @@ ALTER TABLE `turma_has_simulado`
   ADD KEY `fk_turma_has_simulado_turma1_idx` (`turma_id_turma`);
 
 --
--- Índices de tabela `uf`
+-- Indexes for table `uf`
 --
 ALTER TABLE `uf`
   ADD PRIMARY KEY (`id_UF`);
 
 --
--- Índices de tabela `versao_questionario`
+-- Indexes for table `versao_questionario`
 --
 ALTER TABLE `versao_questionario`
   ADD PRIMARY KEY (`id_versao_questionario`),
   ADD KEY `fk_versao_questionario_OA_questionario1_idx` (`OA_questionario_id_questionario`);
 
 --
--- Índices de tabela `versao_questionario_has_oa_questoes`
+-- Indexes for table `versao_questionario_has_oa_questoes`
 --
 ALTER TABLE `versao_questionario_has_oa_questoes`
   ADD PRIMARY KEY (`versao_questionario_id_versao_questionario`,`OA_questoes_id_questao`),
@@ -1076,297 +1121,305 @@ ALTER TABLE `versao_questionario_has_oa_questoes`
   ADD KEY `fk_versao_questionario_has_OA_questoes_versao_questionario1_idx` (`versao_questionario_id_versao_questionario`);
 
 --
--- AUTO_INCREMENT de tabelas apagadas
+-- Indexes for table `versao_simulado`
+--
+ALTER TABLE `versao_simulado`
+  ADD PRIMARY KEY (`id_versao_simulado`),
+  ADD KEY `simulado_id_simulado` (`simulado_id_simulado`),
+  ADD KEY `versao_questionario_id_versao_questionario` (`versao_questionario_id_versao_questionario`);
+
+--
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de tabela `aluno`
+-- AUTO_INCREMENT for table `aluno`
 --
 ALTER TABLE `aluno`
   MODIFY `id_aluno` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de tabela `bairro`
+-- AUTO_INCREMENT for table `bairro`
 --
 ALTER TABLE `bairro`
   MODIFY `id_bairro` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT de tabela `cidade`
+-- AUTO_INCREMENT for table `cidade`
 --
 ALTER TABLE `cidade`
   MODIFY `id_cidade` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT de tabela `curso`
+-- AUTO_INCREMENT for table `curso`
 --
 ALTER TABLE `curso`
   MODIFY `id_curso` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT de tabela `dados_pessoais`
+-- AUTO_INCREMENT for table `dados_pessoais`
 --
 ALTER TABLE `dados_pessoais`
   MODIFY `id_dados_pessoais` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT de tabela `disciplina`
+-- AUTO_INCREMENT for table `disciplina`
 --
 ALTER TABLE `disciplina`
   MODIFY `id_disciplina` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT de tabela `habilidades`
+-- AUTO_INCREMENT for table `habilidades`
 --
 ALTER TABLE `habilidades`
   MODIFY `id_habilidades` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT de tabela `oa_questionario`
+-- AUTO_INCREMENT for table `oa_questionario`
 --
 ALTER TABLE `oa_questionario`
   MODIFY `id_questionario` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
--- AUTO_INCREMENT de tabela `professor`
+-- AUTO_INCREMENT for table `professor`
 --
 ALTER TABLE `professor`
   MODIFY `id_professor` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT de tabela `rua`
+-- AUTO_INCREMENT for table `rua`
 --
 ALTER TABLE `rua`
   MODIFY `idendereco` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT de tabela `turma`
+-- AUTO_INCREMENT for table `turma`
 --
 ALTER TABLE `turma`
   MODIFY `id_turma` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
--- AUTO_INCREMENT de tabela `uf`
+-- AUTO_INCREMENT for table `uf`
 --
 ALTER TABLE `uf`
   MODIFY `id_UF` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
--- Restrições para dumps de tabelas
+-- Constraints for dumped tables
 --
 
 --
--- Restrições para tabelas `aluno`
+-- Constraints for table `aluno`
 --
 ALTER TABLE `aluno`
   ADD CONSTRAINT `fk_aluno_dados_pessoais1` FOREIGN KEY (`id_dados_pessoais`) REFERENCES `dados_pessoais` (`id_dados_pessoais`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `aluno_has_versao_questionario`
+-- Constraints for table `aluno_has_versao_questionario`
 --
 ALTER TABLE `aluno_has_versao_questionario`
   ADD CONSTRAINT `fk_aluno_has_versao_questionario_aluno1` FOREIGN KEY (`aluno_id_aluno`) REFERENCES `aluno` (`id_aluno`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_aluno_has_versao_questionario_versao_questionario1` FOREIGN KEY (`versao_questionario_id_versao_questionario`) REFERENCES `versao_questionario` (`id_versao_questionario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `aluno_turma`
+-- Constraints for table `aluno_turma`
 --
 ALTER TABLE `aluno_turma`
   ADD CONSTRAINT `fk_aluno_has_turma_aluno1` FOREIGN KEY (`aluno_id_aluno`) REFERENCES `aluno` (`id_aluno`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_aluno_has_turma_turma1` FOREIGN KEY (`turma_id_turma`) REFERENCES `turma` (`id_turma`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `aula`
+-- Constraints for table `aula`
 --
 ALTER TABLE `aula`
   ADD CONSTRAINT `fk_aula_disciplina1` FOREIGN KEY (`id_disciplina`) REFERENCES `disciplina` (`id_disciplina`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `aula_has_oa_questionario`
+-- Constraints for table `aula_has_oa_questionario`
 --
 ALTER TABLE `aula_has_oa_questionario`
   ADD CONSTRAINT `fk_aula_has_OA_questionario_OA_questionario1` FOREIGN KEY (`OA_questionario_id_questionario`) REFERENCES `oa_questionario` (`id_questionario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_aula_has_OA_questionario_aula1` FOREIGN KEY (`aula_id_aula`) REFERENCES `aula` (`id_aula`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `aula_has_objetos_aprendizagem`
+-- Constraints for table `aula_has_objetos_aprendizagem`
 --
 ALTER TABLE `aula_has_objetos_aprendizagem`
   ADD CONSTRAINT `fk_aula_has_Objetos_Aprendizagem_Objetos_Aprendizagem1` FOREIGN KEY (`Objetos_Aprendizagem_idObjetos_Aprendizagem`) REFERENCES `objetos_aprendizagem` (`idObjetos_Aprendizagem`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_aula_has_Objetos_Aprendizagem_aula1` FOREIGN KEY (`aula_id_aula`) REFERENCES `aula` (`id_aula`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `aula_has_topico`
+-- Constraints for table `aula_has_topico`
 --
 ALTER TABLE `aula_has_topico`
   ADD CONSTRAINT `fk_aula_has_topico_aula1` FOREIGN KEY (`aula_id_aula`) REFERENCES `aula` (`id_aula`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_aula_has_topico_topico1` FOREIGN KEY (`topico_id_topico`) REFERENCES `topico` (`id_topico`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `aula_has_turma`
+-- Constraints for table `aula_has_turma`
 --
 ALTER TABLE `aula_has_turma`
   ADD CONSTRAINT `fk_aula_has_turma_aula1` FOREIGN KEY (`aula_id_aula`) REFERENCES `aula` (`id_aula`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_aula_has_turma_turma1` FOREIGN KEY (`turma_id_turma`) REFERENCES `turma` (`id_turma`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `bairro`
+-- Constraints for table `bairro`
 --
 ALTER TABLE `bairro`
   ADD CONSTRAINT `fk_bairro_cidade1` FOREIGN KEY (`id_cidade`) REFERENCES `cidade` (`id_cidade`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `cidade`
+-- Constraints for table `cidade`
 --
 ALTER TABLE `cidade`
   ADD CONSTRAINT `fk_cidade_UF1` FOREIGN KEY (`id_UF`) REFERENCES `uf` (`id_UF`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `competencias`
+-- Constraints for table `competencias`
 --
 ALTER TABLE `competencias`
   ADD CONSTRAINT `fk_competencias_area1` FOREIGN KEY (`area_id_area`) REFERENCES `area` (`id_area`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `coordenador`
+-- Constraints for table `coordenador`
 --
 ALTER TABLE `coordenador`
   ADD CONSTRAINT `fk_coordenador_curso1` FOREIGN KEY (`curso_id_curso`) REFERENCES `curso` (`id_curso`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `curso`
+-- Constraints for table `curso`
 --
 ALTER TABLE `curso`
   ADD CONSTRAINT `fk_curso_status_curso1` FOREIGN KEY (`status_curso_id_status`) REFERENCES `status_curso` (`id_status`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `dados_pessoais`
+-- Constraints for table `dados_pessoais`
 --
 ALTER TABLE `dados_pessoais`
   ADD CONSTRAINT `fk_dados_pessoais_rua1` FOREIGN KEY (`rua_idendereco`) REFERENCES `rua` (`idendereco`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `disciplina`
+-- Constraints for table `disciplina`
 --
 ALTER TABLE `disciplina`
   ADD CONSTRAINT `fk_disciplina_area1` FOREIGN KEY (`id_area`) REFERENCES `area` (`id_area`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `eixocognitivo`
+-- Constraints for table `eixocognitivo`
 --
 ALTER TABLE `eixocognitivo`
   ADD CONSTRAINT `fk_eixocognitivo_area1` FOREIGN KEY (`area_id_area`) REFERENCES `area` (`id_area`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `habilidades`
+-- Constraints for table `habilidades`
 --
 ALTER TABLE `habilidades`
   ADD CONSTRAINT `fk_habilidades_area1` FOREIGN KEY (`id_area`) REFERENCES `area` (`id_area`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `oa_questionario`
+-- Constraints for table `oa_questionario`
 --
 ALTER TABLE `oa_questionario`
   ADD CONSTRAINT `fk_OA_questionario_disciplina1` FOREIGN KEY (`disciplina_id_disciplina`) REFERENCES `disciplina` (`id_disciplina`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `oa_questionario_has_oa_questoes`
+-- Constraints for table `oa_questionario_has_oa_questoes`
 --
 ALTER TABLE `oa_questionario_has_oa_questoes`
   ADD CONSTRAINT `fk_OA_questionario_has_OA_questoes_OA_questionario1` FOREIGN KEY (`OA_questionario_id_questionario`) REFERENCES `oa_questionario` (`id_questionario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_OA_questionario_has_OA_questoes_OA_questoes1` FOREIGN KEY (`OA_questoes_id_questao`) REFERENCES `oa_questoes` (`id_questao`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `oa_questoes`
+-- Constraints for table `oa_questoes`
 --
 ALTER TABLE `oa_questoes`
   ADD CONSTRAINT `fk_OA_questoes_disciplina1` FOREIGN KEY (`disciplina_id_disciplina`) REFERENCES `disciplina` (`id_disciplina`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_OA_questoes_professor1` FOREIGN KEY (`professor_id_professor`) REFERENCES `professor` (`id_professor`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `oa_questoes_has_habilidades`
+-- Constraints for table `oa_questoes_has_habilidades`
 --
 ALTER TABLE `oa_questoes_has_habilidades`
   ADD CONSTRAINT `fk_OA_questoes_has_habilidades_OA_questoes1` FOREIGN KEY (`OA_questoes_id_questao`) REFERENCES `oa_questoes` (`id_questao`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_OA_questoes_has_habilidades_habilidades1` FOREIGN KEY (`habilidades_id_habilidades`) REFERENCES `habilidades` (`id_habilidades`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `oa_questoes_has_topico`
+-- Constraints for table `oa_questoes_has_topico`
 --
 ALTER TABLE `oa_questoes_has_topico`
   ADD CONSTRAINT `fk_OA_questoes_has_topico_OA_questoes1` FOREIGN KEY (`OA_questoes_id_questao`) REFERENCES `oa_questoes` (`id_questao`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_OA_questoes_has_topico_topico1` FOREIGN KEY (`topico_id_topico`) REFERENCES `topico` (`id_topico`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `objetos_aprendizagem`
+-- Constraints for table `objetos_aprendizagem`
 --
 ALTER TABLE `objetos_aprendizagem`
   ADD CONSTRAINT `fk_Objetos_Aprendizagem_disciplina1` FOREIGN KEY (`disciplina_id_disciplina`) REFERENCES `disciplina` (`id_disciplina`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Objetos_Aprendizagem_professor1` FOREIGN KEY (`professor_id_professor`) REFERENCES `professor` (`id_professor`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `objetos_aprendizagem_has_habilidades`
+-- Constraints for table `objetos_aprendizagem_has_habilidades`
 --
 ALTER TABLE `objetos_aprendizagem_has_habilidades`
   ADD CONSTRAINT `fk_Objetos_Aprendizagem_has_habilidades_Objetos_Aprendizagem1` FOREIGN KEY (`Objetos_Aprendizagem_idObjetos_Aprendizagem`) REFERENCES `objetos_aprendizagem` (`idObjetos_Aprendizagem`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Objetos_Aprendizagem_has_habilidades_habilidades1` FOREIGN KEY (`habilidades_id_habilidades`) REFERENCES `habilidades` (`id_habilidades`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `objetos_aprendizagem_has_keywords`
+-- Constraints for table `objetos_aprendizagem_has_keywords`
 --
 ALTER TABLE `objetos_aprendizagem_has_keywords`
   ADD CONSTRAINT `fk_Objetos_Aprendizagem_has_Keywords_Keywords1` FOREIGN KEY (`Keywords_idKeywords`) REFERENCES `keywords` (`idKeywords`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Objetos_Aprendizagem_has_Keywords_Objetos_Aprendizagem1` FOREIGN KEY (`Objetos_Aprendizagem_idObjetos_Aprendizagem`) REFERENCES `objetos_aprendizagem` (`idObjetos_Aprendizagem`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `objetos_aprendizagem_has_topico`
+-- Constraints for table `objetos_aprendizagem_has_topico`
 --
 ALTER TABLE `objetos_aprendizagem_has_topico`
   ADD CONSTRAINT `fk_Objetos_Aprendizagem_has_topico_Objetos_Aprendizagem1` FOREIGN KEY (`Objetos_Aprendizagem_idObjetos_Aprendizagem`) REFERENCES `objetos_aprendizagem` (`idObjetos_Aprendizagem`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_Objetos_Aprendizagem_has_topico_topico1` FOREIGN KEY (`topico_id_topico`) REFERENCES `topico` (`id_topico`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `professor`
+-- Constraints for table `professor`
 --
 ALTER TABLE `professor`
   ADD CONSTRAINT `fk_professor_dados_pessoais1` FOREIGN KEY (`id_dados_pessoais`) REFERENCES `dados_pessoais` (`id_dados_pessoais`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `professor_has_disciplina`
+-- Constraints for table `professor_has_disciplina`
 --
 ALTER TABLE `professor_has_disciplina`
   ADD CONSTRAINT `fk_professor_has_disciplina_disciplina1` FOREIGN KEY (`disciplina_id_disciplina`) REFERENCES `disciplina` (`id_disciplina`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_professor_has_disciplina_professor1` FOREIGN KEY (`professor_id_professor`) REFERENCES `professor` (`id_professor`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `professor_has_turma`
+-- Constraints for table `professor_has_turma`
 --
 ALTER TABLE `professor_has_turma`
   ADD CONSTRAINT `fk_professor_has_turma_professor1` FOREIGN KEY (`professor_id_professor`) REFERENCES `professor` (`id_professor`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_professor_has_turma_turma1` FOREIGN KEY (`turma_id_turma`) REFERENCES `turma` (`id_turma`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `rua`
+-- Constraints for table `rua`
 --
 ALTER TABLE `rua`
   ADD CONSTRAINT `fk_rua_bairro1` FOREIGN KEY (`id_bairro`) REFERENCES `bairro` (`id_bairro`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `simulado`
+-- Constraints for table `simulado`
 --
 ALTER TABLE `simulado`
   ADD CONSTRAINT `fk_simulado_coordenador1` FOREIGN KEY (`id_coordenador`) REFERENCES `coordenador` (`id_coordenador`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `simulado_has_oa_questionario`
+-- Constraints for table `simulado_has_oa_questionario`
 --
 ALTER TABLE `simulado_has_oa_questionario`
   ADD CONSTRAINT `fk_simulado_has_OA_questionario_OA_questionario1` FOREIGN KEY (`OA_questionario_id_questionario`) REFERENCES `oa_questionario` (`id_questionario`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_simulado_has_OA_questionario_simulado1` FOREIGN KEY (`simulado_id_simulado`) REFERENCES `simulado` (`id_simulado`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `turma`
+-- Constraints for table `turma`
 --
 ALTER TABLE `turma`
   ADD CONSTRAINT `fk_turma_curso1` FOREIGN KEY (`id_curso`) REFERENCES `curso` (`id_curso`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `turma_has_disciplina`
+-- Constraints for table `turma_has_disciplina`
 --
 ALTER TABLE `turma_has_disciplina`
   ADD CONSTRAINT `fk_turma_has_disciplina_disciplina1` FOREIGN KEY (`disciplina_id_disciplina`) REFERENCES `disciplina` (`id_disciplina`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_turma_has_disciplina_turma1` FOREIGN KEY (`turma_id_turma`) REFERENCES `turma` (`id_turma`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `turma_has_epoca_bimestre`
+-- Constraints for table `turma_has_epoca_bimestre`
 --
 ALTER TABLE `turma_has_epoca_bimestre`
   ADD CONSTRAINT `fk_turma_has_epoca_bimestre_epoca_bimestre1` FOREIGN KEY (`epoca_bimestre_id_epoca_bimestre`) REFERENCES `epoca_bimestre` (`id_epoca_bimestre`) ON DELETE NO ACTION ON UPDATE NO ACTION,
@@ -1374,24 +1427,31 @@ ALTER TABLE `turma_has_epoca_bimestre`
   ADD CONSTRAINT `fk_turma_has_epoca_bimestre_turma1` FOREIGN KEY (`turma_id_turma`) REFERENCES `turma` (`id_turma`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `turma_has_simulado`
+-- Constraints for table `turma_has_simulado`
 --
 ALTER TABLE `turma_has_simulado`
   ADD CONSTRAINT `fk_turma_has_simulado_simulado1` FOREIGN KEY (`simulado_id_simulado`) REFERENCES `simulado` (`id_simulado`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_turma_has_simulado_turma1` FOREIGN KEY (`turma_id_turma`) REFERENCES `turma` (`id_turma`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `versao_questionario`
+-- Constraints for table `versao_questionario`
 --
 ALTER TABLE `versao_questionario`
   ADD CONSTRAINT `fk_versao_questionario_OA_questionario1` FOREIGN KEY (`OA_questionario_id_questionario`) REFERENCES `oa_questionario` (`id_questionario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
--- Restrições para tabelas `versao_questionario_has_oa_questoes`
+-- Constraints for table `versao_questionario_has_oa_questoes`
 --
 ALTER TABLE `versao_questionario_has_oa_questoes`
   ADD CONSTRAINT `fk_versao_questionario_has_OA_questoes_OA_questoes1` FOREIGN KEY (`OA_questoes_id_questao`) REFERENCES `oa_questoes` (`id_questao`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `fk_versao_questionario_has_OA_questoes_versao_questionario1` FOREIGN KEY (`versao_questionario_id_versao_questionario`) REFERENCES `versao_questionario` (`id_versao_questionario`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `versao_simulado`
+--
+ALTER TABLE `versao_simulado`
+  ADD CONSTRAINT `versao_simulado_ibfk_1` FOREIGN KEY (`simulado_id_simulado`) REFERENCES `simulado` (`id_simulado`),
+  ADD CONSTRAINT `versao_simulado_ibfk_2` FOREIGN KEY (`versao_questionario_id_versao_questionario`) REFERENCES `versao_questionario` (`id_versao_questionario`);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
