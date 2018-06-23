@@ -9,7 +9,4 @@ var conn = function(){
     });
 }
 
-module.exports = function(){
-    console.log("Database online!");
-    return conn;
-}
+module.exports = conn;

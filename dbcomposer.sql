@@ -10,6 +10,18 @@
 CREATE DATABASE dbcomposer;
 USE dbcomposer;
 
+/*USE dbcomposer;
+
+create table versao_simulado(
+	id_versao_simulado int not null PRIMARY KEY,
+    versao_questionario_id_versao_questionario int not null,
+    simulado_id_simulado int not null,
+    
+    FOREIGN KEY(versao_questionario_id_versao_questionario) REFERENCES versao_questionario(id_versao_questionario),
+    FOREIGN KEY(simulado_id_simulado) REFERENCES simulado(id_simulado)
+);*/
+
+
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 

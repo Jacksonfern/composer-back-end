@@ -1,7 +1,7 @@
 exports.gerarVersoes = function (params, app) {
     var id_questionario = params.id; //id questionário
     var N = params.quantidade;
-    var conn = app.config.connection(); //conexão com o banco de dados
+    var conn = app.config.connection; //conexão com o banco de dados
     var questionario = new app.app.models.questionario(conn); //objeto que faz requisições para o banco de dados
 
     questionario.questions(id_questionario, function (err, result) { //Pega todas as questões vinculadas a um questionário
