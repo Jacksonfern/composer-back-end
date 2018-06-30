@@ -3,12 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Jun 23, 2018 at 12:54 PM
+-- Generation Time: Jun 30, 2018 at 08:10 PM
 -- Server version: 5.7.22-0ubuntu0.17.10.1
 -- PHP Version: 7.1.17-0ubuntu0.17.10.1
-
-CREATE DATABASE dbcomposer;
-USE dbcomposer;
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -431,7 +428,9 @@ INSERT INTO `oa_questoes` (`id_questao`, `descricao_OA`, `disciplina_id_discipli
 (2, 'Habilidade com matemática', 1, 1, 'Quanto é 4*4??;a)8;b)4;c)6;d)16;e)20', 2, 3, 4, 0, 1, 1, 10),
 (3, 'Trigonometria', 1, 1, 'Qual o arcoseno de 1/2??', 1, 2, 3, 0, 1, 1, 10),
 (4, 'Tabela periodica', 1, 1, 'Qual a massa atomica do carbono??;a)10u.c;b)5u.c;c)12u.c;d)15u.c;e)16u.c', 2, 3, 0, 1, 1, 1, 10),
-(5, 'Tabela periodica', 1, 1, 'Qual a massa atomica do carbono??;a)10u.c;b)5u.c;c)12u.c;d)15u.c;e)16u.c', 2, 3, 0, 1, 1, 1, 10);
+(5, 'Tabela periodica', 1, 1, 'Qual a massa atomica do carbono??;a)10u.c;b)5u.c;c)12u.c;d)15u.c;e)16u.c', 2, 3, 0, 1, 1, 1, 10),
+(6, 'Geometria', 1, 1, 'Qual a medida do raio da circunferencia cuja área é 16pi^2?;a)NaN', 2, 3, 0, 3, 1, 1, 20),
+(7, 'Geometria', 1, 1, 'Qual a medida do raio da circunferencia cuja área é 16pi^2?;a)NaN', 2, 3, 0, 3, 1, 1, 20);
 
 -- --------------------------------------------------------
 
@@ -584,7 +583,10 @@ CREATE TABLE `simulado` (
 --
 
 INSERT INTO `simulado` (`id_simulado`, `descricao_simulado`, `id_coordenador`) VALUES
-(1, 'Programação web', 1);
+(1, 'Programação web', 1),
+(2, 'Matemática Computacional', 1),
+(3, 'Grafos', 1),
+(4, 'Matemática Discreta', 1);
 
 -- --------------------------------------------------------
 
@@ -603,7 +605,11 @@ CREATE TABLE `simulado_has_oa_questionario` (
 
 INSERT INTO `simulado_has_oa_questionario` (`simulado_id_simulado`, `OA_questionario_id_questionario`) VALUES
 (1, 1),
-(1, 3);
+(2, 1),
+(3, 1),
+(1, 3),
+(2, 3),
+(3, 3);
 
 -- --------------------------------------------------------
 
@@ -773,18 +779,22 @@ CREATE TABLE `versao_simulado` (
   `id_versao_simulado` int(11) NOT NULL,
   `versao_simulado` int(11) NOT NULL,
   `simulado_id_simulado` int(11) NOT NULL,
-  `versao_questionario_id_versao_questionario` int(10) UNSIGNED DEFAULT NULL
+  `versao_questionario_id_versao_questionario` int(10) UNSIGNED NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `versao_simulado`
 --
 
-INSERT INTO `versao_simulado` (`id_versao_simulado`, `simulado_id_simulado`, `versao_questionario_id_versao_questionario`) VALUES
-(1, 1, 1),
-(2, 1, 2),
-(3, 1, 3),
-(4, 1, 4);
+INSERT INTO `versao_simulado` (`id_versao_simulado`, `versao_simulado`, `simulado_id_simulado`, `versao_questionario_id_versao_questionario`) VALUES
+(1, 1, 2, 1),
+(2, 2, 2, 2),
+(3, 3, 2, 3),
+(4, 4, 2, 4),
+(5, 1, 2, 5),
+(6, 2, 2, 6),
+(7, 3, 2, 7),
+(8, 4, 2, 8);
 
 --
 -- Indexes for dumped tables
