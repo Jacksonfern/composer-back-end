@@ -24,17 +24,8 @@ exports.gerarVersoes = function (params, app) {
             var id_versao = (result[0].id == null ? 0 : result[0].id); //Atribui o último id inserido na variável id_versao (se for null, vai receber 0)
 
             for(var i = 0; i < N; i++) { //Gerador de versões
+                var ordem = geraVersao(id_questoes, i);
                 id_versao++;
-                var ordem = ""; //String para armazenar a ordem
-                var aux = id_questoes.slice(); //Copio o vetor
-                var index = 0;
-
-                //Algoritmo para gerar versões
-                while (aux.length > 1) {
-                    index = (index + i) % aux.length;
-                    ordem += aux.splice(index, 1)[0] + ",";
-                }
-                ordem += aux[0];
 
                 let versaoQuestionario = { //JSON para armazenar a versao
                     id_versao_questionario: id_versao,
@@ -51,4 +42,18 @@ exports.gerarVersoes = function (params, app) {
             }
         });
     });
+}
+
+function geraVersao(id_questoes, seed){
+    var ordem = ""; //String para armazenar a ordem
+    var aux = id_questoes.slice(); //Copio o vetor
+    var index = 0;
+
+    //Algoritmo para gerar versões
+    while (aux.length > 1) {
+        index = (index + i) % aux.length;
+        ordem += aux.splice(index, 1)[0] + ",";
+    }
+    ordem += aux[0];
+    return ordem;
 }

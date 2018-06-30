@@ -2,9 +2,17 @@ function simulados(connection){
     this._connection = connection;
 }
 
+simulados.prototype.createSimulado = function(params, callback){
+    this._connection.query("INSERT INTO simulado SET ?", params, callback);
+}
+
 simulados.prototype.countVersoes = function(id_questionario, callback){
-    this._connection.query("SELECT count(*) from versao_questionario "
+    this._connection.query("SELECT count(*) as quantidade from versao_questionario "
          + "WHERE OA_questionario_id_questionario = '" + id_questionario + "'", callback);
+}
+
+simulados.prototype.getLastSimulado = function(callback){
+    this._connection.query("SELECT MAX(id_simulado) as id FROM simulado", callback);
 }
 
 simulados.prototype.getLastIDSimulado = function(callback){

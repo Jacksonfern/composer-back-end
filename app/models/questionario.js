@@ -17,6 +17,4 @@ questionario.prototype.getLastID = function(callback){
     + "FROM versao_questionario", callback);
 }
 
-module.exports = function(){
-    return questionario;
-}
+module.exports = questionario;

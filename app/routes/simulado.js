@@ -1,7 +1,12 @@
 module.exports = function(app){
-    app.get('/criarSimulado', function(req, res){
+    app.get('/criarsimulado', function(req, res){
         var simulado = require('../controllers/simulado');
-        simulado.createSimulado(req.query, res);
+        simulado.criarSimulado(req.query, res);
+    });
+
+    app.get('/vincularquestionario', function(req, res){
+        var simulado = require('../controllers/simulado');
+        simulado.addQuestionarios(req.query, res);
     });
 
     app.post('/simulado', function(req, res){
