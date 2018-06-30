@@ -5,7 +5,7 @@ var conn = function(){
         host : 'localhost',
         user : 'root',
         password : '@admin123',
-        database : 'dbcompose'
+        database : 'dbcomposer'
     });
 }
 
